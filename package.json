@@ -1,0 +1,14 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "testes utilizando a ferramenta Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "Jhennifer Siqueira",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^9.5.1"
+  }
+}
