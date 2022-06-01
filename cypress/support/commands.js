@@ -66,7 +66,7 @@ Cypress.Commands.add("login", () => {
         .siblings("input")
         .click();
       cy.get(FormsCovid.buttonConfirmar).click();
-      cy.get(FormsCovid.buttonContinuar).click();
+      cy.get(FormsCovid.buttonContinuar).click({ force: true });
     }
   });
 });
