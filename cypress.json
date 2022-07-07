@@ -1,6 +1,6 @@
 {
-    "viewportWidth": 1440,
-    "viewportHeight": 900,
+    "viewportWidth": 1000,
+    "viewportHeight": 660,
     "retries": {
         "runMode": 2,
         "openMode": 2

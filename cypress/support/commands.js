@@ -70,5 +70,3 @@ Cypress.Commands.add("login", () => {
     }
   });
 });
-
-Cypress.Commands.add("formularioCovid", () => {});

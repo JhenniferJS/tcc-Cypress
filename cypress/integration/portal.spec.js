@@ -29,7 +29,10 @@ describe("Portal do Aluno", function () {
     cy.get(PortalElements.telaPrincipal)
       .contains("a", "Pedidos (Notas)")
       .click();
-    cy.contains("span", "Não existem pedidos de notas a serem solicitados !!!");
+    cy.contains(
+      "span",
+      "Não existem pedidos de notas a serem solicitados !!!"
+    ).should("be.visible");
   });
 
   it("Consulta de pedidos", function () {
@@ -116,14 +119,12 @@ describe("Portal do Aluno", function () {
         .contains("a", "Pedidos de Prova Presencial")
         .click();
 
-      cy.get("#ctl00_Corpo_UCPedidosProvasPresencial1_tvwProvat1").then(
-        ($el) => {
-          disciplina = $el.text();
-          cy.contains("a", "Home").click();
-          cy.get(PortalElements.telaPrincipal).contains("a", "Notas").click();
-          cy.contains("span", new RegExp(disciplina, "i")).should("be.visible");
-        }
-      );
+      cy.get(PortalElements.cursoPedidoProva).then(($el) => {
+        disciplina = $el.text();
+        cy.contains("a", "Home").click();
+        cy.get(PortalElements.telaPrincipal).contains("a", "Notas").click();
+        cy.contains("span", new RegExp(disciplina, "i")).should("be.visible");
+      });
     });
   });
 });
