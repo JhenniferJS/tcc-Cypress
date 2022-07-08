@@ -7,7 +7,7 @@
 
 O Cypress é uma ferramenta de última geração que utiliza o Node JS como servidor e interpretador de sua linguagem JavaScript. Tem como foco principal em testes end-2-end, sendo esses os teste criados nesse repositório. Nesse projeto é utilizado para realizar testes end-2-end no Portal Academico do Inatel.
 
-## Tecnologias utilizadas
+### Tecnologias utilizadas
 
 - [Cypress](https://www.cypress.io/)
 - [JavaScript](https://www.javascript.com/)
