@@ -42,6 +42,8 @@ $ npm install ou yarn install
 
 ### Iniciando a aplicação
 
+Antes de executar os testes, é necessários preencher os dados para login no Portal Acadêmico (curso, matrícula e senha) no arquivo `cypress/fixtures/login.js`
+
 Para executar os testes via npm:
 
 ```bash
