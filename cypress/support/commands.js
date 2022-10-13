@@ -1,33 +1,21 @@
 import { LoginElements } from "./elements/login.elements";
 import { FormsCovid } from "./elements/formsCovid.elements";
+import dadosLogin from "./../fixtures/login"
 
 Cypress.on("uncaught:exception", (err, runnable) => {
   return false;
 });
 
 Cypress.Commands.add("login", () => {
+  const dados = dadosLogin.data();
   cy.visit(
     "https://siteseguro.inatel.br/PortalAcademico/WebLogin.aspx?ReturnUrl=%2fPortalacademico"
   );
 
   cy.get(LoginElements.tipoAutenticacao).select("Por Curso e Matricula");
-  cy.readFile("/tcc/login.json")
-    .its("curso")
-    .then(($curso) => {
-      cy.get(LoginElements.selectCurso).select($curso);
-    });
-
-  cy.readFile("/tcc/login.json")
-    .its("matricula")
-    .then(($matricula) => {
-      cy.get(LoginElements.inputMatricula).type($matricula);
-    });
-
-  cy.readFile("/tcc/login.json")
-    .its("senha")
-    .then(($senha) => {
-      cy.get(LoginElements.inputSenha).type($senha);
-    });
+  cy.get(LoginElements.selectCurso).select(dados.curso);
+  cy.get(LoginElements.inputMatricula).type(dados.matricula);
+  cy.get(LoginElements.inputSenha).type(dados.senha);
 
   cy.get(LoginElements.buttonLogin).click();
   cy.wait(2000);
