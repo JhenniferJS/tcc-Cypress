@@ -111,20 +111,4 @@ describe("Portal do Aluno", function () {
     cy.contains("th", "Juros").should("be.visible");
     cy.contains("th", "Total").should("be.visible");
   });
-
-  context("Cenário de erro", function () {
-    it("Verificar se disciplina está presente em Pedidos de Prova Presencial e Notas", function () {
-      let disciplina;
-      cy.get(PortalElements.telaPrincipal)
-        .contains("a", "Pedidos de Prova Presencial")
-        .click();
-
-      cy.get(PortalElements.cursoPedidoProva).then(($el) => {
-        disciplina = $el.text();
-        cy.contains("a", "Home").click();
-        cy.get(PortalElements.telaPrincipal).contains("a", "Notas").click();
-        cy.contains("span", new RegExp(disciplina, "i")).should("be.visible");
-      });
-    });
-  });
 });
